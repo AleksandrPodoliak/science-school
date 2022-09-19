@@ -1,6 +1,7 @@
 ---
 deployment:
   tasks:
+    - npm install
     - npm run build
     - export DEPLOYPATH=/home2/science6/public_html/
     - /bin/cp -R dist $DEPLOYPATH
