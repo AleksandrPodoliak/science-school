@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "push": "npm run build && git add . && git commit -am \"build\" && git push",
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build && git add . && git commit -am \"build\" && git push",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
