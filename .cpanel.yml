@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - npm run build
+    - export DEPLOYPATH=/home2/science6/public_html/
+    - /dist -R images $DEPLOYPATH
