@@ -1,21 +1,18 @@
 <template>
-  <div class="container">
-    {{ $t('message') }}
-  </div>
-  
-  <LocaleSwitcher />
+  <headerBlock />
 </template>
 
 <script>
 
-import LocaleSwitcher from '../components/LocaleSwitcher';
+import headerBlock from '@/components/headerBlock.vue';
 
 export default {
 
   name: 'mainPage',
   components: {
-    LocaleSwitcher,
+    headerBlock,
   },
 
 }
+
 </script>

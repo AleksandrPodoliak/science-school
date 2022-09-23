@@ -10,6 +10,7 @@
     "push": "npm run build && git add . && git commit -am \"build\" && git push"
   },
   "dependencies": {
+    "click-outside-vue3": "^4.0.1",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
     "vue-i18n": "^9.1.0",
