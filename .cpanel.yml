@@ -2,4 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/science6/public_html/
-    - /bin/cp -R dist/* $DEPLOYPATH
+    - /bin/cp -R dist/* $DEPLOYPATH/en
+    - /bin/cp -R dist/* $DEPLOYPATH/uk
+    - /bin/cp -R dist/* $DEPLOYPATH/ru
