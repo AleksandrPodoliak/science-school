@@ -1,3 +1,5 @@
 {
-  "nav":  ["About us", "Education", "Price", "Teachers", "Gallery", "Contacts"]
+  "header": {
+    "nav":  ["About us", "Education", "Price", "Teachers", "Gallery", "Contacts"]
+  }
 }

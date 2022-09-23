@@ -30,9 +30,9 @@ export default {
   computed: {
     navList() {
       return [
-        this.$t('nav[0]'), this.$t('nav[1]'),
-        this.$t('nav[2]'), this.$t('nav[3]'),
-        this.$t('nav[4]'), this.$t('nav[5]'),
+        this.$t('header.nav[0]'), this.$t('header.nav[1]'),
+        this.$t('header.nav[2]'), this.$t('header.nav[3]'),
+        this.$t('header.nav[4]'), this.$t('header.nav[5]'),
       ]
     },
   },
@@ -42,10 +42,12 @@ export default {
 <style lang="scss" scoped>
 
 .header {
+  position: relative;
+  z-index: 2;
   font-family: "Raleway-Bold";
   font-style: normal;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 0.875rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
