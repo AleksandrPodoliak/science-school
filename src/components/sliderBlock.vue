@@ -1,5 +1,5 @@
 <template>
-  <div class="swiper">
+  <div class="swiper container">
     <swiper 
       class="swiper-wrapper"
       :modules="modules"

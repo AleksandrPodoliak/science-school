@@ -1,3 +1,7 @@
 body {
   background-color: #011343;
 }
+
+a:focus {
+  outline: none;
+}

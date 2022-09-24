@@ -1,5 +1,13 @@
 {
   "header": {
     "nav":  ["About us", "Education", "Price", "Teachers", "Gallery", "Contacts"]
+  },
+  "about": {
+    "title": "",
+    "text": ""
+  },
+  "reasons": {
+    "title": "",
+    "reason":  []
   }
 }
