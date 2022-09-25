@@ -1,4 +1,5 @@
 <template>
+  <a id="anchor0"></a>
   <div class="about container container-inner">
     <div class="title">
       {{ this.$t('about.title') }}
@@ -7,7 +8,7 @@
       <img class="content-img" src="../assets/about-us.png" alt="science">
       <div v-html="$t('about.text')" class="content-text"></div>
     </div>
-    <img class="content-img_star" src="../assets/about-us-star.png" alt="science">
+    <!-- <img class="content-img_star" src="../assets/about-us-star.png" alt="science"> -->
   </div>
 </template>
 
@@ -30,7 +31,6 @@ export default {
     &-text {
       width: 580px;
       font-family: 'Roboto-Regular';
-      font-style: normal;
       font-weight: 400;
       font-size: 1.25rem;
       line-height: 200%;

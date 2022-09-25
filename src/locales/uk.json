@@ -9,5 +9,40 @@
   "reasons": {
     "title": "",
     "reason":  []
+  },
+  "learning": {
+    "title": "",
+    "description": "",
+    "list_ending_title": "",
+    "list_ending_items": [],
+    "list_events_title": ""
+  },
+  "price": {
+    "title": "",
+    "cards": [
+
+    ],
+    "additional_title": "",
+    "additional_info": ""
+  },
+  "bot": {
+    "title": ""
+  },
+  "teacher": {
+    "title": "",
+    "descr": "",
+    "teachers": [
+      {
+        "name": "",
+        "position": ""
+      }
+    ]
+  },
+  "gallery": {
+    "title": ""
+  },
+  "contacts": {
+    "title": "",
+    "time": ""
   }
 }

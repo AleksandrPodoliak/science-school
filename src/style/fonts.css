@@ -4,11 +4,31 @@
 }
 
 @font-face {
+  font-family: "Raleway-ExtraBold";
+  src: url("../assets/font/Raleway/Raleway-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: "Raleway-SemiBold";
+  src: url("../assets/font/Raleway/Raleway-SemiBold.ttf");
+}
+
+@font-face {
   font-family: "Raleway-Medium";
   src: url("../assets/font/Raleway/Raleway-Medium.ttf");
 }
 
 @font-face {
+  font-family: "Raleway-Italic";
+  src: url("../assets/font/Raleway/Raleway-Italic.ttf");
+}
+
+@font-face {
   font-family: "Roboto-Regular";
   src: url("../assets/font/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../assets/font/Roboto/Roboto-Bold.ttf");
 }

@@ -13,6 +13,7 @@
 .container {
   width: 1440px;
   margin: 0 auto;
+  overflow: hidden;
 
   &-inner {
     padding: 80px 130px;
@@ -21,7 +22,6 @@
 
 .title {
   font-family: 'Raleway-Bold';
-  font-style: normal;
   font-weight: 700;
   font-size: 1.5rem;
   color: #00B2FF;

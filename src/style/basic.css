@@ -2,6 +2,10 @@ body {
   background-color: #011343;
 }
 
+a {
+  text-decoration: none;
+}
+
 a:focus {
   outline: none;
 }

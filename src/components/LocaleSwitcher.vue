@@ -84,7 +84,6 @@ export default {
     backdrop-filter: blur(2px);
     border-radius: 4px;
     font-family: "Raleway-Bold";
-    font-style: normal;
     font-weight: 700;
     font-size: 14px;
     color: #00B2FF;
@@ -105,7 +104,6 @@ export default {
     &__item {
       padding: 20px 10px;
       font-family: 'Raleway-Medium';
-      font-style: normal;
       font-weight: 500;
       font-size: 14px;
       color: #FFFFFF;

@@ -8,7 +8,7 @@
           v-for="(item, i) in navList"
           :key="i"
         > 
-          <a :href="i">
+          <a :href="'#anchor'+i">
             {{ item }} 
           </a>
         </li>
@@ -45,7 +45,6 @@ export default {
   position: relative;
   z-index: 2;
   font-family: "Raleway-Bold";
-  font-style: normal;
   font-weight: 700;
   font-size: 0.875rem;
   display: flex;
@@ -75,7 +74,6 @@ export default {
       & a {
         color: #fff;
         text-transform: uppercase;
-        text-decoration: none;
 
         &:hover {
           color: #00B2FF;

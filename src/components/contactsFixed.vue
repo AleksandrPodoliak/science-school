@@ -1,19 +1,19 @@
 <template>
   <div class="contacts">
     <div class="socials">
-      <a href="https://t.me/scienceschoolua">
+      <a href="https://t.me/scienceschoolua" target="_blank">
         <img
           class="socials-img"
           src="../assets/contacts/tg.svg" alt="tg"
         >
       </a>
-      <a href="https://www.facebook.com/scienceschoolua">
+      <a href="https://www.facebook.com/scienceschoolua" target="_blank">
         <img
           class="socials-img" 
           src="../assets/contacts/fb.svg" alt="fb"
         >
       </a>
-      <a href="https://www.instagram.com/scienceschoolua/">
+      <a href="https://www.instagram.com/scienceschoolua/" target="_blank">
         <img
           class="socials-img"
           src="../assets/contacts/inst.svg" alt="inst"
@@ -23,13 +23,35 @@
     <img
       class="socials-img_call" 
       src="../assets/contacts/call.svg" alt="call"
+      @click="togglePopUp"
     >
+      
+    <popUp 
+      v-if="showPoUp"
+      @close="togglePopUp"
+    >
+      
+    </popUp>
   </div>
 </template>
 
 <script>
+
+import popUp from './popUp.vue'
+
 export default {
   name: "contactsFixed",
+  components: { popUp },
+  data() {
+    return {
+      showPoUp: false,
+    }
+  },
+  methods: {
+    togglePopUp() {
+      this.showPoUp = !this.showPoUp;
+    },
+  },
 }
 </script>
 
@@ -63,6 +85,8 @@ export default {
   }
 
   &_call {
+    cursor: pointer;
+
     &:hover {
       filter: drop-shadow(0px 0px 20px rgba(0, 178, 255, 0.5));
     }
