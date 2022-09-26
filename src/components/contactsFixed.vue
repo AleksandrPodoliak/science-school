@@ -26,8 +26,8 @@
       @click="togglePopUp"
     >
       
-    <!-- v-if="showPoUp" -->
     <popUp 
+      v-if="showPoUp"
       class="popup"
       :title="$t('popup.title1')"
       @close="togglePopUp"
@@ -104,8 +104,8 @@ export default {
   data() {
     return {
       showPoUp: false,
-      username: 'scsc',
-      phone: '380938088502',
+      username: '',
+      phone: '',
     }
   },
   validations () {
