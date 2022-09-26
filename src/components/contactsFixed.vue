@@ -83,7 +83,6 @@ import customButton from './customButton.vue';
 
 import { useVuelidate } from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
-import { requester } from "../requester.js"
 
 const mustBeCool = (value) => {
   const re = /380\d{9}/
@@ -104,8 +103,8 @@ export default {
   data() {
     return {
       showPoUp: false,
-      username: '',
-      phone: '',
+      username: 'sdsds',
+      phone: '380938088502',
     }
   },
   validations () {
@@ -124,15 +123,20 @@ export default {
       } 
     },
     async sendForm() {
-
       const payload  = {
         username: this.username,
         phone: this.phone,
       };
+      
+      const resp = await fetch('https://science-school.herokuapp.com/callback', {
+        method: "POST",
+        // mode: 'no-cors',
+        headers: {'Content-Type': 'application/json'},
+        body: payload
+      })
+      const data = await resp.json();
 
-      const resp = await requester(payload);
-
-      console.log('resp :>> ', resp);
+      console.log('resp :>> ', data);
     },
   },
 }
