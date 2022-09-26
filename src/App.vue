@@ -13,7 +13,6 @@
 .container {
   width: 1440px;
   margin: 0 auto;
-  overflow: hidden;
 
   &-inner {
     padding: 80px 130px;

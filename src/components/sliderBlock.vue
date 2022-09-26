@@ -5,7 +5,6 @@
       :modules="modules"
       :slides-per-view="1"
       :space-between="50"
-      navigation
       :pagination="{ clickable: true }"
       :loop="true"
       :speed="500"
@@ -31,10 +30,9 @@
 
 <script>
 
-import { Navigation, Pagination, A11y, Autoplay } from 'swiper';
+import { Pagination, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export default {
@@ -72,7 +70,7 @@ export default {
   },
   setup() {
     return {
-      modules: [Navigation, Pagination, A11y, Autoplay],
+      modules: [Pagination, A11y, Autoplay],
     };
   },
   computed: {

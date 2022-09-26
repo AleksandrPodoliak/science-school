@@ -6,6 +6,7 @@
       @click="toggleLocaleSelect"
     >
       {{ localeText }}
+      <img class="switcher-arrow" src="../assets/arrow-down.svg" alt="arrow">
     </div>
 
     <div
@@ -51,9 +52,9 @@ export default {
   },
   computed: {
     localeText() {
-      if (this.$i18n.locale == 'uk') return 'Українська'
-      if (this.$i18n.locale == 'ru') return 'Русский'
-      if (this.$i18n.locale == 'en') return 'English'
+      if (this.$i18n.locale == 'uk') return 'UA'
+      if (this.$i18n.locale == 'ru') return 'RU'
+      if (this.$i18n.locale == 'en') return 'EN'
       return 'Українська'
     },
   },
@@ -89,6 +90,10 @@ export default {
     color: #00B2FF;
     cursor: pointer;
     user-select: none;
+  }
+
+  &-arrow {
+    margin-left: 4px;
   }
 
   &-select {

@@ -1,20 +1,22 @@
 <template>
   <div class="header">
-    <img src="../assets/logo-header.svg" alt="logo" class="header-logo">
-    <nav class="header-nav">
-      <ul class="header-nav__list">
-        <li
-          class="header-nav__list-item"
-          v-for="(item, i) in navList"
-          :key="i"
-        > 
-          <a :href="'#anchor'+i">
-            {{ item }} 
-          </a>
-        </li>
-      </ul>
-      <LocaleSwitcher />
-    </nav>
+    <div class="header-wrapper container">
+      <img src="../assets/logo-header.svg" alt="logo" class="header-logo">
+      <nav class="header-nav">
+        <ul class="header-nav__list">
+          <li
+            class="header-nav__list-item"
+            v-for="(item, i) in navList"
+            :key="i"
+          > 
+            <a :href="'#anchor'+i">
+              {{ item }} 
+            </a>
+          </li>
+        </ul>
+        <LocaleSwitcher />
+      </nav>
+    </div>
   </div>
 </template>
 
@@ -47,13 +49,16 @@ export default {
   font-family: "Raleway-Bold";
   font-weight: 700;
   font-size: 0.875rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 16px 130px 24px;
   background-image: url(../assets/header-bg.png);
   background-size: cover;
   filter: drop-shadow(0px 4px 8px rgba(1, 29, 60, 0.25));
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 16px 130px 24px;
+  }
 
   &-nav {
     display: flex;
