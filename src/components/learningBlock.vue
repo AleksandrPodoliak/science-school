@@ -8,7 +8,7 @@
       <div class="content-school">
         <img class="content-school__img" src="../assets/learning/learning_img1.png" alt="school">
         <div v-html="$t('learning.description')" class="content-school__text"></div>
-        <!-- <img class="content-school__img_star" src="../assets/learning/learning_star1.png" alt="star"> -->
+        <img class="content-school__img_star" src="../assets/learning/learning_star1.png" alt="star">
       </div>
       <div class="content-ending">
         <ul class="content-ending-list">
@@ -25,7 +25,7 @@
       <div class="content-events">
         <img class="content-events__img" src="../assets/learning/learning_img2.png" alt="school">
         <div v-html="$t('learning.list_events_title')" class="content-events__text"></div>
-        <!-- <img class="content-events__img_star" src="../assets/learning/learning_star2.png" alt="star"> -->
+        <img class="content-events__img_star" src="../assets/learning/learning_star2.png" alt="star">
       </div>
     </div>
   </div>
@@ -113,17 +113,16 @@ export default {
   &-school__img_star,
   &-events__img_star {
     position: absolute;
-    z-index: 1;
   }
   
   &-school__img_star {
-    width: 50%;
+    z-index: 3;
     top: -100px;
     left: -150px;
   }
   
   &-events__img_star {
-    width: 100%;
+    z-index: 1;
     top: -160px;
     left: -180px;
   }

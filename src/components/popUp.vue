@@ -7,6 +7,12 @@
         alt="exit"
         @click="$emit('close')"
       >
+      <div
+        v-if="title"
+        class="popup-container__title"
+      >
+        {{ title }}
+      </div>
       <slot></slot>
     </div>
   </div>
@@ -15,6 +21,9 @@
 <script>
 export default {
   name: 'popUp',
+  props: {
+    title: String,
+  },
 }
 </script>
 
@@ -47,6 +56,17 @@ export default {
       right: -40px;
       cursor: pointer;
       user-select: none;
+    }
+
+    &__title {
+      font-family: 'Raleway-Medium';
+      font-weight: 500;
+      font-size: 0.875rem;
+      line-height: 150%;
+      text-align: center;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 40px;
     }
   }
 }

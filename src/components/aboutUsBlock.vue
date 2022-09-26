@@ -8,7 +8,7 @@
       <img class="content-img" src="../assets/about-us.png" alt="science">
       <div v-html="$t('about.text')" class="content-text"></div>
     </div>
-    <!-- <img class="content-img_star" src="../assets/about-us-star.png" alt="science"> -->
+    <img class="content-img_star" src="../assets/about-us-star.png" alt="science">
   </div>
 </template>
 
@@ -40,8 +40,8 @@ export default {
     &-img_star {
       position: absolute;
       z-index: 1;
-      top: 0px;
-      left: -150px;
+      top: 80px;
+      left: -40px;
     }
   }
 }

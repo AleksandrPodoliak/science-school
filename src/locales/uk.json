@@ -44,5 +44,19 @@
   "contacts": {
     "title": "",
     "time": ""
+  },
+  "popup": {
+    "title1": "",
+    "input_name": {
+      "label": "",
+      "placeholder": "",
+      "error": ""
+    },
+    "input_phone": {
+      "label": "",
+      "placeholder": "",
+      "error": ""
+    },
+    "button": ""
   }
 }

@@ -7,7 +7,7 @@
 <style lang="scss">
 
 @import './style/reset.css';
-@import './style/basic.css';
+@import './style/basic.scss';
 @import './style/fonts.css';
 
 .container {
