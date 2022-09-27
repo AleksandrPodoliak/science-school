@@ -30,7 +30,7 @@
       },
       {
         "name": "Science School",
-        "period": "ГОД обучения",
+        "period": "Год обучения",
         "descr": "16 online занятий/месяц  (45 мин)<br>до 10 человек<br>+ 4 ивента в месяц (2 часа)",
         "sum": "31500",
         "curr": "грн",
@@ -38,7 +38,7 @@
       },
       {
         "name": "Lecture",
-        "period": "",
+        "period": "Единоразово",
         "descr": "24 занятия  online в месяц<br>45 минут<br>от 7 участников",
         "sum": "2000",
         "curr": "грн/мес",
@@ -46,7 +46,7 @@
       },
       {
         "name": "Debate",
-        "period": "",
+        "period": "Единоразово",
         "descr": "7 занятий online в месяц<br>30 минут<br>16 участников",
         "sum": "500",
         "curr": "грн",
@@ -54,7 +54,7 @@
       },
       {
         "name": "Camp",
-        "period": "",
+        "period": "Единоразово",
         "descr": "49 занятий online в месяц<br>40 минут лекция<br>+ 2 часа мероприятие<br>от 10 участников",
         "sum": "5000",
         "curr": "грн",
@@ -109,10 +109,17 @@
     "time": "ПН - ПТ: с 09.00 до 19.00<br><br>СБ - ВС: с 10.00 до 18.00"
   },
   "popup": {
-    "title1": "Оставьте свои контакты и мы свяжемся с вами в ближайшее время",
+    "title": "Оставьте свои контакты и мы свяжемся с вами в ближайшее время",
+    "title_success": "Спасибо!<br>Мы свяжемся с вами в ближайшее время",
+    "title_error": "Что-то пошло не так... попробуйте еще раз",
     "input_name": {
       "label": "ФИО",
       "placeholder": "Введите ваше ФИО",
+      "error": "івмівм"
+    },
+    "input_child": {
+      "label": "Фио ребенка",
+      "placeholder": "Введите ФИО вашего ребенка",
       "error": "івмівм"
     },
     "input_phone": {
@@ -120,6 +127,16 @@
       "placeholder": "380XXXXXXXXX",
       "error": "івмівм"
     },
-    "button": "Отправить"
+    "input_mail": {
+      "label": "Email",
+      "placeholder": "Введите ваш email",
+      "error": "івмівм"
+    },
+    "input_check": {
+      "label": "Условия и правила",
+      "document": "Я принимаю условия <a style=\"color: #B2C8FF; text-decoration: underline;\" href=\"https://drive.google.com/file/d/1VL0AlmrrXzcWfwqPHZo5ytkO6RHTvMZd/view?usp=sharing\" target=\"_blank\">договора</a>"
+    },
+    "button": "Отправить",
+    "button_pay": "Оплатить"
   }
 }

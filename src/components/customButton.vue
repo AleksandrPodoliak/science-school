@@ -45,7 +45,11 @@ export default {
   }
 
   &:hover {
-    background: linear-gradient(272.74deg, #0078AB 10.08%, #00B2FF 100%);
+    background: #5581F1;
+  }
+
+  &:active {
+    background: #3F4CD7;
   }
 
   &:disabled {

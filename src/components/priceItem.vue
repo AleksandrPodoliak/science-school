@@ -22,6 +22,7 @@
 
     <customButton
       :text="button_name"
+      @click="onClick"
     />
   </div>
 </template>
@@ -46,6 +47,14 @@ export default {
   methods: {
     formatSum(sum) {
       return new Intl.NumberFormat('ru-RU').format(sum);
+    },
+    onClick() {
+      this.$emit('openPopup', {
+        name: this.name, 
+        period: this.period,
+        sum: this.sum,
+        curr: this.curr,
+      })
     },
   },
 }

@@ -10,8 +10,8 @@
       <div
         v-if="title"
         class="popup-container__title"
+        v-html="title"
       >
-        {{ title }}
       </div>
       <slot></slot>
     </div>

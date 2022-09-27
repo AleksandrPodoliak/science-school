@@ -29,7 +29,7 @@
     <popUp 
       v-if="showPoUp"
       class="popup"
-      :title="$t('popup.title1')"
+      :title="$t('popup.title')"
       @close="togglePopUp"
     >
       <div 
@@ -52,7 +52,7 @@
       </div>
       <div 
         class="input input-phone"
-        :class="{ invalid: v$.phone.$dirty && v$.phone.required.$invalid || v$.phone.$dirty && v$.phone.mustBeCool.$invalid }"
+        :class="{ invalid: v$.phone.$dirty && v$.phone.required.$invalid || v$.phone.$dirty && v$.phone.phoneValidator.$invalid }"
       >
         <input 
           v-model="phone"
@@ -69,9 +69,27 @@
       </div>
       <customButton 
         :text="$t('popup.button')"
-        :disabled="v$.$invalid"
+        :disabled="v$.$invalid || requestInProgress"
         @click="sendForm"
       />
+    </popUp>
+
+    <popUp 
+      v-if="showPoUpSuccess"
+      class="popup"
+      :title="$t('popup.title_success')"
+      @close="togglePopUpSuccess"
+    >
+      <img class="popup__success_img" src="../assets/contacts/contacts-success.png" alt="success">
+    </popUp>
+
+    <popUp 
+      v-if="showPoUpError"
+      class="popup"
+      :title="$t('popup.title_error')"
+      @close="togglePopUpError"
+    >
+      <img class="popup__error_img" src="../assets/contacts/contacts-error.png" alt="error">
     </popUp>
   </div>
 </template>
@@ -85,7 +103,7 @@ import { useVuelidate } from '@vuelidate/core'
 import { required } from '@vuelidate/validators'
 import { requester } from '../requester.js'
 
-const mustBeCool = (value) => {
+const phoneValidator = (value) => {
   const re = /380\d{9}/
   return re.test(value)
 }
@@ -104,26 +122,32 @@ export default {
   data() {
     return {
       showPoUp: false,
+      showPoUpSuccess: false,
+      showPoUpError: false,
       username: '',
       phone: '',
+      requestInProgress: false,
     }
   },
   validations () {
     return {
       username: { required, $autoDirty: true },
-      phone: { required, mustBeCool, $autoDirty: true }
+      phone: { required, phoneValidator, $autoDirty: true }
     }
   },
   methods: {
     togglePopUp() {
       this.showPoUp = !this.showPoUp;
-      if (this.showPoUp) {
-        setTimeout(() => {
-          this.$refs['input-name'].focus();
-        }, 0);
-      } else {
+      
+      if (!this.showPoUp) {
         this.clearForm();
       }
+    },
+    togglePopUpSuccess() {
+      this.showPoUpSuccess = !this.showPoUpSuccess;
+    },
+    togglePopUpError() {
+      this.showPoUpError = !this.showPoUpError;
     },
     clearForm() {
       this.username = '';
@@ -132,6 +156,7 @@ export default {
       this.v$.phone.$reset();
     },
     async sendForm() {
+      this.requestInProgress = true;
 
       const payload  = {
         method: 'callback',
@@ -144,11 +169,15 @@ export default {
       try {
         await requester(payload);
         this.togglePopUp();
+        this.togglePopUpSuccess();
       } catch (error) {
         this.togglePopUp();
+        this.togglePopUpError();
       }
 
       this.clearForm();
+
+      this.requestInProgress = false;
     },
   },
 }
@@ -198,6 +227,12 @@ export default {
   }
   .input-phone {
     margin-bottom: 40px;
+  }
+
+  &__success_img,
+  &__error_img {
+    display: block;
+    margin: 0 auto;
   }
 }
 </style>

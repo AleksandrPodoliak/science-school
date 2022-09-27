@@ -46,8 +46,15 @@
     "time": ""
   },
   "popup": {
-    "title1": "",
+    "title": "",
+    "title_success": "",
+    "title_error": "",
     "input_name": {
+      "label": "",
+      "placeholder": "",
+      "error": ""
+    },
+    "input_child": {
       "label": "",
       "placeholder": "",
       "error": ""
@@ -57,6 +64,16 @@
       "placeholder": "",
       "error": ""
     },
-    "button": ""
+    "input_mail": {
+      "label": "",
+      "placeholder": "",
+      "error": ""
+    },
+    "input_check": {
+      "label": "",
+      "document": ""
+    },
+    "button": "",
+    "button_pay": ""
   }
 }
