@@ -42,12 +42,12 @@ export default {
   font-family: "Raleway-Bold";
   font-weight: 700;
   font-size: 0.875rem;
-  padding: 16px 130px;
   background-image: url(../assets/header-bg.png);
   background-size: cover;
   filter: drop-shadow(0px 4px 8px rgba(1, 29, 60, 0.25));
 
   &-wrapper {
+    padding: 16px 130px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,6 +65,22 @@ export default {
       height: 24px;
       width: 24px;
       margin-left: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+ 
+  .footer {
+    padding: 1.2rem 0;
+
+    &-wrapper {
+      justify-content: center;
+    }
+
+    &-logo,
+    &-socials {
+      display: none;
     }
   }
 }

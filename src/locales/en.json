@@ -1,79 +1,142 @@
 {
   "header": {
-    "nav":  ["About us", "Education", "Price", "Teachers", "Gallery", "Contacts"]
+    "nav":  ["About us", "Education", "Prices", "Teachers", "Gallery", "Contacts"]
   },
   "about": {
-    "title": "",
-    "text": ""
+    "title": "About us",
+    "text": "Welcome to Science School!<br><br>We are a scientific and creative center with innovative approaches to learning, the best teachers and a flexible class schedule.<br><br>Are you planning to study abroad? An individual trajectory of studying Science in English will help you prepare for exams. We will teach your child to express themselves and unlock their potential!"
   },
   "reasons": {
-    "title": "",
-    "reason":  []
+    "title": "Reasons to choose our school",
+    "reason":  ["Teaching in English", "Small groups", "Convenient class schedule", "Progress Tracking", "Certificate of Completion"]
   },
   "learning": {
-    "title": "",
-    "description": "",
-    "list_ending_title": "",
-    "list_ending_items": [],
-    "list_events_title": ""
+    "title": "Education",
+    "description": "For each class, an individual training program:<br> — Middle School - Grade 5 - 9;<br> — Senior school - 10th - 11th grade.<br><br>Classes are held in small groups of up to 10 people 2 times a week, 2 lessons per day lasting 45 minutes.<br><br>Lectures on mathematics, biology, chemistry, physics in English, as well as additional classes upon recruitment of a group of 8 people.<br><br>The training program was created and adapted according to the Cambridge IGSCE international curricula and model curricula of Ukraine and is also aimed at preparing for the international SAT and Cambridge exams.",
+    "list_ending_title": "Upon completion of the training, each participant will receive:",
+    "list_ending_items": ["Course completion certificate - Science school certificate - All graduates up to grade 10", "SAT General certificate - after grade 9", "Graduation certificate + SAT Subject Certificate - After grade 10"],
+    "list_events_title": "Scientific entertainment activities:<br><br> — educational and recreational trips (trips to the Ukrainian Academy of Sciences, visits to leading universities and educational institutions of the country, visits to cultural and entertainment events, organization of excursions to cultural heritage sites, etc.);<br><br> — educational and creative tourist camp."
   },
   "price": {
-    "title": "",
+    "title": "Prices",
     "cards": [
-
+      {
+        "name": "Science School",
+        "period": "Month of study",
+        "descr": "16 online classes (45 min)<br>for up to 10 people<br>+ 4 events per month (2 hours)",
+        "sum": "3500",
+        "curr": "UAH",
+        "button_name": "Sign up"
+      },
+      {
+        "name": "Science School",
+        "period": "Year of study",
+        "descr": "16 online classes/month (45 min)<br>up to 10 people<br>+ 4 events per month (2 hours)",
+        "sum": "31500",
+        "curr": "UAH",
+        "button_name": "Sign up"
+      },
+      {
+        "name": "Lecture",
+        "period": "Month of study",
+        "descr": "24 online lessons per month<br>45 minutes<br>from 7 participants",
+        "sum": "2000",
+        "curr": "UAH",
+        "button_name": "Sign up"
+      },
+      {
+        "name": "Debate",
+        "period": "Month of study",
+        "descr": "7 online lessons per month<br>30 minutes<br>16 participants",
+        "sum": "500",
+        "curr": "UAH",
+        "button_name": "Sign up"
+      },
+      {
+        "name": "Camp",
+        "period": "Month of study",
+        "descr": "49 online lessons per month<br>40 minutes lecture<br>+ 2 hours event<br>from 10 participants",
+        "sum": "5000",
+        "curr": "UAH",
+        "button_name": "Sign up"
+      }
     ],
-    "additional_title": "",
-    "additional_info": ""
+    "additional_title": "Side activities",
+    "additional_info": "* Check with the administration for information on additional events"
   },
   "bot": {
-    "title": ""
+    "title": "You can also sign up through our Telegram-BOT"
   },
   "teacher": {
-    "title": "",
-    "descr": "",
+    "title": "Teachers",
+    "descr": "The best teachers in Odessa work at the Science School in order to give the most necessary knowledge and skills to those who want to get them",
     "teachers": [
       {
-        "name": "",
-        "position": ""
+        "name": "Karapetyan Lilit Sargisovna",
+        "position": "Director of Science School<br>Mathematics teacher"
+      },
+      {
+        "name": "Radionov Denis Borisovich",
+        "position": "Biology teacher"
+      },
+      {
+        "name": "Kopychenko Anna Vasilievna",
+        "position": "Physics teacher"
+      },
+      {
+        "name": "Kuchuk Gleb Mikhailovich",
+        "position": "Lecturer of art history"
+      },
+      {
+        "name": "Vasiliev Mikhail Anatolyevich",
+        "position": "Teacher of chemistry, biology"
+      },
+      {
+        "name": "Sokolova Katerina Olegovna",
+        "position": "Teaching Assistant"
+      },
+      {
+        "name": "Voikin Vadim Vladislavovich",
+        "position": "Teaching Assistant"
       }
     ]
   },
   "gallery": {
-    "title": ""
+    "title": "Gallery"
   },
   "contacts": {
-    "title": "",
-    "time": ""
+    "title": "Contacts",
+    "time": "Mon - Fri from 09.00 to 19.00<br><br>Sat - Sun from 10.00 to 18.00"
   },
   "popup": {
-    "title": "",
-    "title_success": "",
-    "title_error": "",
+    "title": "Leave your contact details and we will contact you shortly",
+    "title_success": "Thanks!<br>We will contact you shortly",
+    "title_error": "Something went wrong... please try again",
     "input_name": {
-      "label": "",
-      "placeholder": "",
-      "error": ""
+      "label": "Full name",
+      "placeholder": "Enter your full name",
+      "error": "* Fill in the field"
     },
     "input_child": {
-      "label": "",
-      "placeholder": "",
-      "error": ""
+      "label": "Full name of the child",
+      "placeholder": "Enter your child's name",
+      "error": "* Fill in the field"
     },
     "input_phone": {
-      "label": "",
-      "placeholder": "",
-      "error": ""
+      "label": "Phone number",
+      "placeholder": "380XXXXXXXXX",
+      "error": "* Enter the phone number in the format 380XXXXXXXXX"
     },
     "input_mail": {
-      "label": "",
-      "placeholder": "",
-      "error": ""
+      "label": "Email",
+      "placeholder": "Enter your email",
+      "error": "* Enter your email in the format "
     },
     "input_check": {
-      "label": "",
-      "document": ""
+      "label": "Terms and Conditions",
+      "document": "I accept the terms of the <a style=\"color: #B2C8FF; text-decoration: underline;\" href=\"https://drive.google.com/file/d/1VL0AlmrrXzcWfwqPHZo5ytkO6RHTvMZd/view?usp=sharing\" target=\"_blank\">contract</a>"
     },
-    "button": "",
-    "button_pay": ""
+    "button": "Send",
+    "button_pay": "Payment"
   }
 }

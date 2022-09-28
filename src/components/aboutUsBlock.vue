@@ -45,4 +45,26 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 420px) {
+  
+.about {
+  .content {
+    flex-direction: column;
+
+    &-text {
+      margin-top: 2rem;
+      width: 100%;
+      font-size: 1rem;
+      line-height: 150%;
+      color: #FFFFFF;
+    }
+
+    &-img_star {
+      top: -60px;
+      left: -220px;
+    }
+  }
+}
+}
 </style>

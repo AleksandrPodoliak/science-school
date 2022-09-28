@@ -51,7 +51,7 @@ export default {
       position: absolute;
       z-index: 4;
       top: -275px;
-      left: -110px;
+      left: -120px;
     }
 
     &__back {

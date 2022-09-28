@@ -76,5 +76,12 @@ export default {
   }
 }
 
+@media screen and (max-width: 420px) {
+  
+  .content {
+    flex-direction: column;
+  }
+}
+
 
 </style>

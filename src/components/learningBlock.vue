@@ -94,6 +94,7 @@ export default {
   
         &::after {
           position: absolute;
+          top: 0px;
           left: -50px;
           content: '';
           width: 32px;
@@ -125,6 +126,46 @@ export default {
     z-index: 1;
     top: -160px;
     left: -180px;
+  }
+
+}
+
+@media screen and (max-width: 420px) {
+  
+  .content {
+    &-school, &-events {
+      flex-direction: column;
+      
+      &__text {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 150%;
+      }
+    }
+
+    &-ending {
+      margin-bottom: 4rem;
+
+      &-list {
+        font-size: 1rem;
+    
+        &__item {
+          margin: 1rem 0 0 3rem;
+          font-size: 1rem;
+          line-height: 150%;
+        }
+      }
+    }
+
+    &-school__img,
+    &-events__img {
+      width: 100%;
+    }
+
+    &-school__img_star {
+      top: -160px;
+      left: -270px;
+    }
   }
 
 }

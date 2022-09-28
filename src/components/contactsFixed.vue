@@ -223,16 +223,27 @@ export default {
 
 .popup {
   .input-name {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .input-phone {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   &__success_img,
   &__error_img {
     display: block;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  
+  .socials {
+    display: none;
+
+    &-img_call {
+      width: 3rem;
+    }
   }
 }
 </style>

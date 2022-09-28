@@ -75,4 +75,35 @@ export default {
   }
 }
 
+@media screen and (max-width: 420px) {
+
+  .content {
+    flex-wrap: wrap;
+
+    .reasons-item {
+      width: 45%;
+      
+
+      img {
+        max-height: 80px;
+        margin-bottom: 25px;
+      }
+
+      p {
+        font-family: 'Raleway-Medium';
+        font-weight: 500;
+        font-size: 0.875rem;
+        line-height: 150%;
+        text-align: center;
+        color: #FFFFFF;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+}
+
 </style>

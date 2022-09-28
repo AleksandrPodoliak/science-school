@@ -98,4 +98,14 @@ export default {
   }
 }
 
+@media screen and (max-width: 420px) {
+  
+  .teacher {
+
+    &-subtitle {
+      width: 100%;
+    }
+  }
+}
+
 </style>

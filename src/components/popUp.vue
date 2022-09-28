@@ -52,7 +52,7 @@ export default {
       position: absolute;
       width: 24px;
       height: 24px;
-      top: -28px;
+      top: 0;
       right: -40px;
       cursor: pointer;
       user-select: none;

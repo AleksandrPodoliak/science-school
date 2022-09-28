@@ -124,7 +124,7 @@
       />
       <label for="mail">{{ $t('popup.input_mail.label') }}</label>
       <div v-if="v$.mail.$error">
-        {{ $t('popup.input_mail.error') }}
+        {{ $t('popup.input_mail.error')+'email@example.com' }}
       </div>
     </div>
     <div 
@@ -442,10 +442,10 @@ export default {
   .input-child,
   .input-phone,
   .input-mail {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   .input-check {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
   }
@@ -454,6 +454,17 @@ export default {
   &__error_img {
     display: block;
     margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  
+  .contant-additional {
+    flex-direction: column;
+  }
+
+  .contant-main {
+    flex-direction: column;
   }
 }
 

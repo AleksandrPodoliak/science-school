@@ -125,4 +125,12 @@ export default {
   }
 }
 
+@media screen and (max-width: 420px) {
+  
+
+  .price-item {
+    width: 100%;
+  }
+}
+
 </style>

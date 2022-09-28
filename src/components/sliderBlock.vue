@@ -15,7 +15,7 @@
     >
       <swiper-slide
         class="swiper-slide"
-        v-for="(slide, i) in sliderList"
+        v-for="(slide, i) in mobileScreen ? sliderListMobile : sliderListDesktop"
         :key="i"
       >
         <img
@@ -43,7 +43,7 @@ export default {
   },
   data() {
     return {
-      baners: {
+      banersDesktop: {
         ru: [
           require("../assets/slides/slide1ru.png"),
           require("../assets/slides/slide2ru.png"),
@@ -66,6 +66,29 @@ export default {
           require("../assets/slides/slide5en.png"),
         ],
       },
+      banersMobile: {
+        ru: [
+          require("../assets/slides/slide1ruMobile.png"),
+          require("../assets/slides/slide2ruMobile.png"),
+          require("../assets/slides/slide3ruMobile.png"),
+          require("../assets/slides/slide4ruMobile.png"),
+          require("../assets/slides/slide5ruMobile.png"),
+        ],
+        uk: [
+          require("../assets/slides/slide1ukMobile.png"),
+          require("../assets/slides/slide2ukMobile.png"),
+          require("../assets/slides/slide3ukMobile.png"),
+          require("../assets/slides/slide4ukMobile.png"),
+          require("../assets/slides/slide5ukMobile.png"),
+        ],
+        en: [
+          require("../assets/slides/slide1enMobile.png"),
+          require("../assets/slides/slide2enMobile.png"),
+          require("../assets/slides/slide3enMobile.png"),
+          require("../assets/slides/slide4enMobile.png"),
+          require("../assets/slides/slide5enMobile.png"),
+        ],
+      },
     }
   },
   setup() {
@@ -74,8 +97,14 @@ export default {
     };
   },
   computed: {
-    sliderList() {
-      return this.baners[this.$i18n.locale];
+    mobileScreen() {
+      return window.screen.width <= 420
+    },
+    sliderListDesktop() {
+      return this.banersDesktop[this.$i18n.locale];
+    },
+    sliderListMobile() {
+      return this.banersMobile[this.$i18n.locale];
     },
   },
 }

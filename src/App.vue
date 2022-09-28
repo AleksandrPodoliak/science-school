@@ -10,6 +10,7 @@
 @import './style/basic.scss';
 @import './style/fonts.css';
 
+
 .container {
   width: 1440px;
   margin: 0 auto;
@@ -19,14 +20,14 @@
   }
 }
 
-.title {
-  font-family: 'Raleway-Bold';
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #00B2FF;
-  text-transform: uppercase;
-  text-align: center;
-  margin-bottom: 80px;
+@media screen and (max-width: 420px) {
+  .container {
+    width: 100%;
+
+    &-inner {
+      padding: 2.5rem 2rem;
+    }
+  }
 }
 
 </style>
