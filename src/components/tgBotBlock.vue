@@ -30,7 +30,6 @@ export default {
 .simple {
   font-family: 'Roboto-Regular';
   font-weight: 400;
-  font-size: 1.25rem;
   line-height: 150%;
   color: #FFFFFF;
   margin-bottom: 40px;
@@ -42,7 +41,7 @@ export default {
   align-items: center;
 
   &-btn {
-    width: 200px;
+    width: 12.5rem;
   }
 }
 

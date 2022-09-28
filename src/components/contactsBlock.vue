@@ -80,6 +80,41 @@ export default {
   
   .content {
     flex-direction: column;
+    margin-left: 3rem;
+    font-size: 1rem;
+    line-height: 125%;
+  }
+
+  .contacts {
+    
+    &-time {
+      margin-bottom: 2.5rem;
+    }
+
+    &-time {
+      &::after {
+        top: -0.1rem;
+        left: -3rem;
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+
+    &-contact {
+      &::after {
+        top: -0.1rem;
+        left: -3rem;
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+
+      &::before {
+        bottom: -0.1rem;
+        left: -3rem;
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
   }
 }
 

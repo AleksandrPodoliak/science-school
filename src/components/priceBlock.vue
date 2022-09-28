@@ -458,6 +458,12 @@ export default {
 }
 
 @media screen and (max-width: 420px) {
+
+  .price {
+    &__img_star {
+      display: none;
+    }
+  }
   
   .contant-additional {
     flex-direction: column;

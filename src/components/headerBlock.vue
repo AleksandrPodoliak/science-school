@@ -128,7 +128,7 @@ export default {
   }
 
   .header {
-    z-index: 10;
+    z-index: 5;
 
     &-wrapper {
       align-items: center;
@@ -143,7 +143,7 @@ export default {
       flex-direction: column;
       align-items: center;
       position: absolute;
-      z-index: 10;
+      z-index: 5;
       width: 100%;
       left: 0;
       top: 100%;
@@ -161,7 +161,7 @@ export default {
           line-height: 1rem;
           text-align: center;
           margin: 0;
-          padding: 1.25rem 0;
+          padding: 1.5rem 0;
           border-bottom: 1px solid rgba(230, 230, 254, 0.1);
 
           &:last-child {
@@ -171,7 +171,7 @@ export default {
       }
 
       &__switcher {
-        margin: 20px 0;
+        margin: 1.5rem 0;
       }
     }
 

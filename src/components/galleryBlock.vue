@@ -9,7 +9,6 @@
       :modules="modules"
       :slides-per-view="1"
       :space-between="50"
-      navigation
       :pagination="{ clickable: true }"
       :loop="true"
       :speed="500"
@@ -20,7 +19,7 @@
     >
       <swiper-slide
         class="swiper-slide"
-        v-for="(slide, i) in sliderList"
+        v-for="(slide, i) in mobileScreen ? sliderListMobile : sliderListDesktop"
         :key="i"
       >
         <img
@@ -35,10 +34,9 @@
 
 <script>
 
-import { Navigation, Pagination, A11y, Autoplay } from 'swiper';
+import { Pagination, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export default { 
@@ -49,19 +47,31 @@ export default {
   },
   data() {
     return {
-      sliderList: [
+      sliderListDesktop: [
         require('../assets/gallery/gallery1.png'),
         require('../assets/gallery/gallery2.png'),
         require('../assets/gallery/gallery3.png'),
         require('../assets/gallery/gallery4.png'),
         require('../assets/gallery/gallery5.png'),
       ],
+      sliderListMobile: [
+        require('../assets/gallery/gallery1Mobile.png'),
+        require('../assets/gallery/gallery2Mobile.png'),
+        require('../assets/gallery/gallery3Mobile.png'),
+        require('../assets/gallery/gallery4Mobile.png'),
+        require('../assets/gallery/gallery5Mobile.png'),
+      ],
     }
   },
   setup() {
     return {
-      modules: [Navigation, Pagination, A11y, Autoplay],
+      modules: [Pagination, A11y, Autoplay],
     };
+  },
+  methods: {
+    mobileScreen() {
+      return window.screen.width <= 420
+    },
   },
 }
 </script>

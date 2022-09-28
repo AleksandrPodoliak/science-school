@@ -242,7 +242,7 @@ export default {
     display: none;
 
     &-img_call {
-      width: 3rem;
+      width: 4rem;
     }
   }
 }

@@ -16,6 +16,29 @@
         :image="item.image"
       />
     </div>
+
+    <div class="teacher-cards-swiper">
+      <swiper 
+        class="swiper-wrapper"
+        :modules="modules"
+        :slides-per-view="1"
+        :space-between="50"
+        :pagination="{ clickable: true }"
+        :speed="300"
+        >
+        <swiper-slide
+          class="swiper-slide"
+          v-for="(item, i) in teachersList"
+          :key="i"
+        >
+          <teacherItem
+            :name="item.name"
+            :position="item.position"
+            :image="item.image"
+          />
+        </swiper-slide>
+      </swiper>
+    </div>
   </div>
 </template>
 
@@ -23,10 +46,22 @@
 
 import teacherItem from './teacherItem.vue'
 
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
 export default {
   name: "teachersBlock",
   components: {
     teacherItem,
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return {
+      modules: [Pagination, A11y],
+    };
   },
   computed: {
     teachersList() {
@@ -75,7 +110,6 @@ export default {
 <style lang="scss" scoped>
 
 .teacher {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,7 +118,7 @@ export default {
     width: 800px;
     font-family: 'Roboto-Regular';
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 150%;
     text-align: center;
     color: #FFFFFF;
@@ -96,14 +130,29 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
   }
+
+  &-cards-swiper {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 420px) {
   
   .teacher {
 
+    display: block;
+
     &-subtitle {
       width: 100%;
+      line-height: 175%;
+    }
+
+    &-cards {
+      display: none;
+    }
+
+    &-cards-swiper {
+      display: block;
     }
   }
 }

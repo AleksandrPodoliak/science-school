@@ -97,4 +97,19 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 420px) {
+  
+  .teacher-item {
+    width: 100%;
+    margin-top: 0;
+
+    &-info {
+
+      &__circle {
+        display: none;
+      }
+    }
+  }
+}
 </style>

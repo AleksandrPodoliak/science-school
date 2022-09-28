@@ -56,12 +56,12 @@ export default {
       margin-top: 2rem;
       width: 100%;
       font-size: 1rem;
-      line-height: 150%;
+      line-height: 175%;
       color: #FFFFFF;
     }
 
     &-img_star {
-      top: -60px;
+      top: -70px;
       left: -220px;
     }
   }

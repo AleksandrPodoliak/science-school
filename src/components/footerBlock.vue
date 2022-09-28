@@ -70,7 +70,7 @@ export default {
 }
 
 @media screen and (max-width: 420px) {
- 
+
   .footer {
     padding: 1.2rem 0;
 

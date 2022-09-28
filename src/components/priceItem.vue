@@ -65,11 +65,8 @@ export default {
 .price-item {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 24px;
-  box-sizing: border-box;
   width: 280px;
-  height: 430px;
   background: rgba(230, 230, 254, 0.1);
   border: 2px solid #00B2FF;
   border-radius: 16px;
@@ -100,7 +97,7 @@ export default {
     overflow: hidden;
     font-family: 'Roboto-Regular';
     font-weight: 400;
-    font-size: 1.125;
+    font-size: 1rem;
     line-height: 200%;
     color: #FFFFFF;
     margin-bottom: 16px;
@@ -130,6 +127,32 @@ export default {
 
   .price-item {
     width: 100%;
+    
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    &__name {
+      font-size: 1.25rem;
+      line-height: 175%;
+      margin-bottom: 1rem;
+    }
+
+    &__period {
+      height: 21px;
+      font-size: 0.85rem;
+      line-height: 175%;
+      margin-bottom: 2.5rem;
+    }
+
+    &__descr {
+      margin-bottom: 1rem;
+    }
+
+    &__price {
+      line-height: 175%;
+      margin-bottom: 2.5rem;
+    }
   }
 }
 

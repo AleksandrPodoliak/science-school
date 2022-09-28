@@ -82,20 +82,10 @@ export default {
 
     .reasons-item {
       width: 45%;
-      
-
-      img {
-        max-height: 80px;
-        margin-bottom: 25px;
-      }
 
       p {
-        font-family: 'Raleway-Medium';
-        font-weight: 500;
         font-size: 0.875rem;
-        line-height: 150%;
-        text-align: center;
-        color: #FFFFFF;
+        line-height: 175%;
       }
 
       &:not(:last-child) {
