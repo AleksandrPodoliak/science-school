@@ -34,8 +34,6 @@ export default {
   justify-content: center;
   align-items: center;
   position: fixed;
-  width: 100vw;
-  height: 100vh;
   z-index: 100;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.6);
