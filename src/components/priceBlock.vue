@@ -137,8 +137,8 @@
     class="popup"
     :title="$t('popup.title_success')"
     :button_back="false"
-    @close="togglePopUpSuccess"
-    @click="togglePopUpSuccess"
+    @close="showPoUpSuccess = false"
+    @click="showPoUpSuccess = false"
   >
     <img class="popup__success_img" src="../assets/contacts/contacts-success.png" alt="success">
   </popUp>
@@ -148,8 +148,8 @@
     class="popup"
     :title="$t('popup.title_error')"
     :button_back="false"
-    @close="togglePopUpError"
-    @click="togglePopUpError"
+    @close="showPoUpError = false"
+    @click="showPoUpError = false"
   >
     <img class="popup__error_img" src="../assets/contacts/contacts-error.png" alt="error">
   </popUp>
