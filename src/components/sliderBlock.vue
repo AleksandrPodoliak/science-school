@@ -112,8 +112,18 @@ export default {
 
 <style lang="scss" scoped>
 
+.swiper.container {
+  padding-top: 96px;
+}
 .swiper-slide__img {
   width: 100%;
+}
+
+@media screen and (max-width: 420px) {
+
+  .swiper.container {
+    padding-top: 64px;
+  }
 }
 
 </style>

@@ -12,7 +12,6 @@ a:focus {
 
 .title {
   font-family: 'Raleway-Bold';
-  font-weight: 700;
   font-size: 1.5rem;
   color: #00B2FF;
   text-transform: uppercase;
@@ -29,7 +28,6 @@ a:focus {
     top: 0;
     left: 0;
     font-family: 'Raleway-Medium';
-    font-weight: 400;
     font-size: 0.75rem;
     line-height: 150%;
     text-transform: uppercase;
@@ -46,7 +44,6 @@ a:focus {
     border-radius: 8px;
     background-color: #010F3E;
     font-family: 'Roboto-Regular';
-    font-weight: 600;
     font-size: 0.875rem;
     color: #FFFFFF;
 
@@ -63,7 +60,6 @@ a:focus {
 
     &::placeholder {
       font-family: 'Roboto-Regular';
-      font-weight: 400;
       font-size: 0.875rem;
       line-height: 150%;
       color: rgba(255, 255, 255, 0.5);
@@ -88,7 +84,6 @@ a:focus {
 
     & ~ span {
       font-family: 'Roboto-Regular';
-      font-weight: 400;
       font-size: 0.875rem;
       line-height: 150%;
       color: #FFFFFF;
@@ -113,6 +108,22 @@ a:focus {
   }
 }
 
+.input-phone {
+  input {
+    padding-left: 52px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "+380";
+    top: 38px;
+    left: 18px;
+    font-family: 'Roboto-Regular';
+    font-size: 0.875rem;
+    color: #FFFFFF;
+  }
+}
+
 .input.invalid {
   input {
     border: 1px solid #FF725E;
@@ -128,7 +139,6 @@ a:focus {
     left: 0;
     margin-top: 8px;
     font-family: 'Roboto-Regular';
-    font-weight: 400;
     font-size: 0.75rem;
     line-height: 150%;
     color: #FF725E;
@@ -139,5 +149,27 @@ a:focus {
   .title {
     font-size: 1.25rem;
     margin-bottom: 3rem;
+  }
+
+  .input {
+    padding: 1.5rem 0 1.25rem;
+  
+    label {
+      font-size: 0.7rem;
+    }
+  
+    input {
+      padding-left: 1rem;
+    }
+  }
+  
+  .input-phone {
+    input {
+      padding-left: 3.25rem;
+    }
+  
+    &::before {
+      top: 37px;
+    }
   }
 }

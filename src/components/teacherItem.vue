@@ -59,7 +59,8 @@ export default {
       position: absolute;
       z-index: 3;
       top: -120px;
-      left: 60px;
+      left: 50%;
+      margin-left: -120px;
       width: 200px;
       height: 200px;
       border: 2px solid #00B2FF;
@@ -70,7 +71,8 @@ export default {
       position: absolute;
       z-index: 5;
       top: -100px;
-      left: 80px;
+      left: 50%;
+      margin-left: -100px;
       border-radius: 8px;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
@@ -78,7 +80,6 @@ export default {
     &__name {
       height: 72px;
       font-family: 'Raleway-Bold';;
-      font-weight: 700;
       font-size: 1.5rem;
       line-height: 150%;
       text-align: center;
@@ -88,7 +89,6 @@ export default {
     &__position {
       height: 48px;
       font-family: 'Raleway-Italic';
-      font-weight: 400;
       font-size: 0.875rem;
       line-height: 150%;
       text-align: center;

@@ -66,7 +66,6 @@ export default {
 
     p {
       font-family: 'Raleway-Medium';
-      font-weight: 500;
       font-size: 1.125rem;
       line-height: 150%;
       text-align: center;

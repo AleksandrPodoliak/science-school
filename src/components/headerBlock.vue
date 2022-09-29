@@ -76,10 +76,11 @@ export default {
 }
 
 .header {
-  position: relative;
-  z-index: 2;
+  position: fixed;
+  width: 100%;
+  height: 96px;
+  z-index: 9;
   font-family: "Raleway-Bold";
-  font-weight: 700;
   font-size: 0.875rem;
   background-image: url(../assets/header-bg.png);
   background-size: cover;
@@ -128,7 +129,8 @@ export default {
   }
 
   .header {
-    z-index: 5;
+    height: 64px;
+    z-index: 9;
 
     &-wrapper {
       align-items: center;
@@ -143,7 +145,7 @@ export default {
       flex-direction: column;
       align-items: center;
       position: absolute;
-      z-index: 5;
+      z-index: 9;
       width: 100%;
       left: 0;
       top: 100%;
@@ -156,7 +158,6 @@ export default {
 
         &-item {
           font-family: 'Raleway-Medium';
-          font-weight: 500;
           font-size: 0.875rem;
           line-height: 1rem;
           text-align: center;

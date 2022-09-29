@@ -29,7 +29,6 @@ export default {
 
 .simple {
   font-family: 'Roboto-Regular';
-  font-weight: 400;
   line-height: 150%;
   color: #FFFFFF;
   margin-bottom: 40px;

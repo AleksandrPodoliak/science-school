@@ -73,7 +73,6 @@ export default {
 
   &__name {
     font-family: 'Raleway-ExtraBold';
-    font-weight: 800;
     font-size: 1.25rem;
     line-height: 150%;
     text-transform: uppercase;
@@ -84,7 +83,6 @@ export default {
   &__period {
     height: 21px;
     font-family: 'Raleway-SemiBold';
-    font-weight: 600;
     font-size: 0.875rem;
     line-height: 150%;
     text-transform: uppercase;
@@ -96,7 +94,6 @@ export default {
     height: 144px;
     overflow: hidden;
     font-family: 'Roboto-Regular';
-    font-weight: 400;
     font-size: 1rem;
     line-height: 200%;
     color: #FFFFFF;
@@ -110,13 +107,11 @@ export default {
 
     &_sum {
       font-family: 'Roboto-Bold';
-      font-weight: 800;
       font-size: 1.25rem;
     }
 
     &_curr {
       font-family: 'Roboto-Regular';
-      font-weight: 400;
       font-size: 1.125rem;
     }
   }

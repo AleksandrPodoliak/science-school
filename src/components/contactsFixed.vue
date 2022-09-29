@@ -56,7 +56,8 @@
       >
         <input 
           v-model="phone"
-          type="phone" 
+          type="number"
+          inputmode="numeric"
           name="phone"
           :placeholder="$t('popup.input_phone.placeholder')"
           @focus="v$.phone.$reset"
@@ -104,7 +105,7 @@ import { required } from '@vuelidate/validators'
 import { requester } from '../requester.js'
 
 const phoneValidator = (value) => {
-  const re = /380\d{9}/
+  const re = /^\d{9}$/
   return re.test(value)
 }
 
@@ -162,7 +163,7 @@ export default {
         method: 'callback',
         params: {
           username: this.username,
-          phone: this.phone,
+          phone: '380'+this.phone,
         }
       };
       

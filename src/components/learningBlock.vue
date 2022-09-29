@@ -66,7 +66,6 @@ export default {
     &__text {
       width: 580px;
       font-family: 'Roboto-Regular';
-      font-weight: 400;
       font-size: 1.125rem;
       line-height: 200%;
       color: #FFFFFF;
@@ -78,7 +77,6 @@ export default {
 
     &-list {
       font-family: 'Raleway-Bold';
-      font-weight: 700;
       font-size: 1.25rem;
       line-height: 200%;
       color: #00B2FF;
@@ -87,7 +85,6 @@ export default {
         position: relative;
         margin: 16px 0 0 50px;
         font-family: 'Roboto-Regular';
-        font-weight: 400;
         font-size: 1rem;
         line-height: 200%;
         color: #FFFFFF;

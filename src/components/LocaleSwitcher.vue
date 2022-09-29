@@ -119,7 +119,6 @@ export default {
     backdrop-filter: blur(2px);
     border-radius: 4px;
     font-family: "Raleway-Bold";
-    font-weight: 700;
     font-size: 14px;
     color: #00B2FF;
     cursor: pointer;
@@ -145,7 +144,6 @@ export default {
     &__item {
       padding: 20px 10px;
       font-family: 'Raleway-Medium';
-      font-weight: 500;
       font-size: 14px;
       color: #FFFFFF;
       user-select: none;

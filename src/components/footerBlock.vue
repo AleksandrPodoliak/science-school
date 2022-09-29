@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="footer-wrapper container">
       <img src="../assets/logo-header.svg" alt="logo" class="footer-logo">
-      <span class="footer-copy">2022 © ScienceSchool</span>
+      <div class="footer-copy">2022 © ScienceSchool</div>
       <div class="footer-socials">
         <a href="https://t.me/scienceschoolua" target="_blank">
           <img
@@ -40,7 +40,6 @@ export default {
   position: relative;
   z-index: 2;
   font-family: "Raleway-Bold";
-  font-weight: 700;
   font-size: 0.875rem;
   background-image: url(../assets/header-bg.png);
   background-size: cover;
@@ -55,7 +54,6 @@ export default {
 
   &-copy {
     font-family: 'Roboto-Regular';
-    font-weight: 400;
     font-size: 0.875rem;
     color: #FFFFFF;
   }
@@ -72,9 +70,10 @@ export default {
 @media screen and (max-width: 420px) {
 
   .footer {
-    padding: 1.2rem 0;
+    padding: 1.25rem 0;
 
     &-wrapper {
+      padding: 0;
       justify-content: center;
     }
 

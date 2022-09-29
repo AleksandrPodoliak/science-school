@@ -31,7 +31,6 @@ export default {
     &-text {
       width: 580px;
       font-family: 'Roboto-Regular';
-      font-weight: 400;
       font-size: 1.25rem;
       line-height: 200%;
       color: #FFFFFF;

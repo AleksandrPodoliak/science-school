@@ -117,26 +117,22 @@
       "placeholder": "Введіть ваше ПІБ",
       "error": "* Заповніть поле"
     },
-    "input_child": {
-      "label": "ПІБ дитини",
-      "placeholder": "Введіть ПІБ вашої дитини",
-      "error": "* Заповніть поле"
-    },
     "input_phone": {
       "label": "Номер телефону",
-      "placeholder": "380XXXXXXXXX",
-      "error": "* Введіть номер телефону у форматі 380XXXXXXXXX"
+      "placeholder": "XXXXXXXXX",
+      "error": "* Формат номеру - XXXXXXXXX"
     },
     "input_mail": {
       "label": "Email",
       "placeholder": "Введіть ваш email",
-      "error": "Введіть email у форматі "
+      "error": "* Формат email - "
     },
     "input_check": {
       "label": "Умови та правила",
       "document": "Я приймаю умови <a style=\"color: #B2C8FF; text-decoration: underline;\" href=\"https://drive.google.com/file/d/1VL0AlmrrXzcWfwqPHZo5ytkO6RHTvMZd/view?usp=sharing\" target=\"_blank\">договору</a>"
     },
     "button": "Надіслати",
-    "button_pay": "Сплатити"
+    "button_pay": "Сплатити",
+    "button_back": "Назад"
   }
 }

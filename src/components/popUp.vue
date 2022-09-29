@@ -7,6 +7,13 @@
         alt="exit"
         @click="$emit('close')"
       >
+      <div 
+        class="popup-container__back"
+        @click="$emit('close')"
+      >
+        <img src="../assets/arrow-back.svg" alt="back">
+        <span> {{ this.$t('popup.button_back') }} </span>
+      </div>
       <div
         v-if="title"
         class="popup-container__title"
@@ -56,15 +63,54 @@ export default {
       user-select: none;
     }
 
+    &__back {
+      display: none;
+    }
+
     &__title {
       font-family: 'Raleway-Medium';
-      font-weight: 500;
       font-size: 0.875rem;
       line-height: 150%;
       text-align: center;
       text-transform: uppercase;
       color: #FFFFFF;
       margin-bottom: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  
+  .popup {
+
+    &-container {
+      width: 100%;
+      padding: 2rem;
+
+      &__exit {
+        display: none;  
+      }
+
+      &__back {
+        display: flex;
+        align-items: center;
+        font-family: 'Roboto-Regular';
+        font-size: 0.875rem;
+        line-height: 1rem;
+        color: #FFFFFF;
+        margin-bottom: 2rem;
+
+        & img {
+          margin-right: 0.6rem;
+          height: 0.8rem;
+          width: 0.6rem;
+        }
+      }
+
+      &__title {
+        font-size: 0.75rem;
+        margin-bottom: 2rem;
+      }
     }
   }
 }

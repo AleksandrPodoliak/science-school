@@ -38,7 +38,6 @@ export default {
 
   &__text {
     font-family: 'Roboto-Bold';
-    font-weight: 600;
     font-size: 1.25rem;
     color: #FFFFFF;
     text-transform: uppercase;

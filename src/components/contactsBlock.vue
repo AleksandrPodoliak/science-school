@@ -13,6 +13,26 @@
         science.school.ua@gmail.com
       </div>
     </div>
+    <div class="socials">
+      <a href="https://t.me/scienceschoolua" target="_blank">
+        <img
+          class="socials-img"
+          src="../assets/contacts/tg.svg" alt="tg"
+        >
+      </a>
+      <a href="https://www.facebook.com/scienceschoolua" target="_blank">
+        <img
+          class="socials-img" 
+          src="../assets/contacts/fb.svg" alt="fb"
+        >
+      </a>
+      <a href="https://www.instagram.com/scienceschoolua/" target="_blank">
+        <img
+          class="socials-img"
+          src="../assets/contacts/inst.svg" alt="inst"
+        >
+      </a>
+    </div>
   </div>
 </template>
 
@@ -28,10 +48,13 @@ export default {
   display: flex;
   justify-content: space-around;
   font-family: 'Roboto-Regular';
-  font-weight: 400;
   font-size: 1.25rem;
   line-height: 150%;
   color: #FFFFFF;
+}
+
+.socials {
+  display: none;
 }
 
 .contacts {
@@ -85,9 +108,19 @@ export default {
     line-height: 125%;
   }
 
+  .socials {
+    display: flex;
+    justify-content: center;
+
+    a + a {
+      margin-left: 2.5rem;
+    }
+  }
+
   .contacts {
     
-    &-time {
+    &-time,
+    &-contact {
       margin-bottom: 2.5rem;
     }
 

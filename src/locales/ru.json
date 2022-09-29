@@ -117,26 +117,22 @@
       "placeholder": "Введите ваше ФИО",
       "error": "* Заполните поле"
     },
-    "input_child": {
-      "label": "Фио ребенка",
-      "placeholder": "Введите ФИО вашего ребенка",
-      "error": "* Заполните поле"
-    },
     "input_phone": {
       "label": "Номер телефона",
-      "placeholder": "380XXXXXXXXX",
-      "error": "* Введите номер телефона в формате 380ХХХХХХХХХ"
+      "placeholder": "XXXXXXXXX",
+      "error": "* Формат номера - XXXXXXXXX"
     },
     "input_mail": {
       "label": "Email",
       "placeholder": "Введите ваш email",
-      "error": "* Введите email в формате "
+      "error": "* Формат email - "
     },
     "input_check": {
       "label": "Условия и правила",
       "document": "Я принимаю условия <a style=\"color: #B2C8FF; text-decoration: underline;\" href=\"https://drive.google.com/file/d/1VL0AlmrrXzcWfwqPHZo5ytkO6RHTvMZd/view?usp=sharing\" target=\"_blank\">договора</a>"
     },
     "button": "Отправить",
-    "button_pay": "Оплатить"
+    "button_pay": "Оплатить",
+    "button_back": "Назад"
   }
 }

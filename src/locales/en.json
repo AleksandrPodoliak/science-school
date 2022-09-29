@@ -117,26 +117,22 @@
       "placeholder": "Enter your full name",
       "error": "* Fill in the field"
     },
-    "input_child": {
-      "label": "Full name of the child",
-      "placeholder": "Enter your child's name",
-      "error": "* Fill in the field"
-    },
     "input_phone": {
       "label": "Phone number",
-      "placeholder": "380XXXXXXXXX",
-      "error": "* Enter the phone number in the format 380XXXXXXXXX"
+      "placeholder": "XXXXXXXXX",
+      "error": "* Phone format - XXXXXXXXX"
     },
     "input_mail": {
       "label": "Email",
       "placeholder": "Enter your email",
-      "error": "* Enter your email in the format "
+      "error": "* Email format - "
     },
     "input_check": {
       "label": "Terms and Conditions",
       "document": "I accept the terms of the <a style=\"color: #B2C8FF; text-decoration: underline;\" href=\"https://drive.google.com/file/d/1VL0AlmrrXzcWfwqPHZo5ytkO6RHTvMZd/view?usp=sharing\" target=\"_blank\">contract</a>"
     },
     "button": "Send",
-    "button_pay": "Payment"
+    "button_pay": "Payment",
+    "button_back": "Back"
   }
 }

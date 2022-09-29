@@ -77,29 +77,13 @@
       </div>
     </div>
     <div 
-      class="input input-child"
-      :class="{ invalid: v$.childname.$dirty && v$.childname.required.$invalid }"
-    >
-      <input
-        v-model="childname"
-        type="text" 
-        name="child"
-        :placeholder="$t('popup.input_child.placeholder')"
-        @focus="v$.childname.$reset"
-        @blur="v$.childname.$touch"
-      />
-      <label for="child">{{ $t('popup.input_child.label') }}</label>
-      <div v-if="v$.childname.$error"> 
-        {{ $t('popup.input_child.error') }} 
-      </div>
-    </div>
-    <div 
       class="input input-phone"
       :class="{ invalid: v$.phone.$dirty && v$.phone.required.$invalid || v$.phone.$dirty && v$.phone.phoneValidator.$invalid }"
     >
       <input 
         v-model="phone"
-        type="phone" 
+        type="number"
+        inputmode="numeric"
         name="phone"
         :placeholder="$t('popup.input_phone.placeholder')"
         @focus="v$.phone.$reset"
@@ -178,7 +162,7 @@ import { required, email } from '@vuelidate/validators'
 import { requester } from '../requester.js'
 
 const phoneValidator = (value) => {
-  const re = /380\d{9}$/
+  const re = /^\d{9}$/
   return re.test(value)
 }
 const isRulesAcceptValidator = (value) => {
@@ -198,7 +182,6 @@ export default {
       showPoUpSuccess: false,
       showPoUpError: false,
       username: '',
-      childname: '',
       phone: '',
       mail: '',
       isRulesAccept: false,
@@ -209,7 +192,6 @@ export default {
   validations () {
     return {
       username: { required, $autoDirty: true },
-      childname: { required, $autoDirty: true },
       phone: { required, phoneValidator, $autoDirty: true },
       mail: { required, email, $autoDirty: true },
       isRulesAccept: { isRulesAcceptValidator, $autoDirty: true },
@@ -291,12 +273,10 @@ export default {
     },
     clearForm() {
       this.username = '';
-      this.childname = '';
       this.phone = '';
       this.mail = '';
       this.isRulesAccept = false;
       this.v$.username.$reset();
-      this.v$.childname.$reset();
       this.v$.phone.$reset();
       this.v$.mail.$reset();
       this.v$.isRulesAccept.$reset();
@@ -312,8 +292,7 @@ export default {
         method: 'course',
         params: {
           username: this.username,
-          childname: this.childname,
-          phone: this.phone,
+          phone: '380'+this.phone,
           mail: this.mail,
           sum: this.currentCourseData.sum,
           product: this.currentCourseData.name,
@@ -381,7 +360,6 @@ export default {
 
 .info {
   font-family: "Roboto-Regular";
-  font-weight: 400;
   font-size: 0.75rem;
   line-height: 200%;
   color: #FFFFFF;
@@ -396,7 +374,6 @@ export default {
 
     &__name {
       font-family: 'Raleway-ExtraBold';
-      font-weight: 800;
       font-size: 1.25rem;
       line-height: 150%;
       text-transform: uppercase;
@@ -411,7 +388,6 @@ export default {
 
       &_period {
         font-family: 'Raleway-Medium';
-        font-weight: 500;
         font-size: 0.875rem;
         text-transform: uppercase;
         color: #FFFFFF;
@@ -423,14 +399,12 @@ export default {
         span {
           &:first-child {
             font-family: 'Roboto-Bold';
-            font-weight: 800;
             font-size: 1.25rem;
             color: #FFFFFF;
           }
 
           &:last-child {
             font-family: 'Roboto-Regular';
-            font-weight: 400;
             font-size: 1.125rem;
             color: #FFFFFF;
           }

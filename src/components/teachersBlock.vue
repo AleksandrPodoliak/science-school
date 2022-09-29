@@ -117,7 +117,6 @@ export default {
   &-subtitle {
     width: 800px;
     font-family: 'Roboto-Regular';
-    font-weight: 400;
     font-size: 1.125rem;
     line-height: 150%;
     text-align: center;
