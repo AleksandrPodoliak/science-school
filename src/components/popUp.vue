@@ -7,7 +7,8 @@
         alt="exit"
         @click="$emit('close')"
       >
-      <div 
+      <div
+        v-if="button_back"
         class="popup-container__back"
         @click="$emit('close')"
       >
@@ -30,6 +31,10 @@ export default {
   name: 'popUp',
   props: {
     title: String,
+    button_back: {
+      type: Boolean,
+      default: true
+    },
   },
 }
 </script>

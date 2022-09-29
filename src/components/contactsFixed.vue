@@ -79,7 +79,9 @@
       v-if="showPoUpSuccess"
       class="popup"
       :title="$t('popup.title_success')"
+      :button_back="false"
       @close="togglePopUpSuccess"
+      @click="togglePopUpSuccess"
     >
       <img class="popup__success_img" src="../assets/contacts/contacts-success.png" alt="success">
     </popUp>
@@ -88,7 +90,9 @@
       v-if="showPoUpError"
       class="popup"
       :title="$t('popup.title_error')"
+      :button_back="false"
       @close="togglePopUpError"
+      @click="togglePopUpError"
     >
       <img class="popup__error_img" src="../assets/contacts/contacts-error.png" alt="error">
     </popUp>

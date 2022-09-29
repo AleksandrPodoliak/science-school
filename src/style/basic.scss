@@ -113,6 +113,12 @@ a:focus {
     padding-left: 52px;
   }
 
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   &::before {
     position: absolute;
     content: "+380";
