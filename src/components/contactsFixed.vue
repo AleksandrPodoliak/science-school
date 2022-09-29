@@ -218,6 +218,7 @@ export default {
   }
 
   &_call {
+    width: 80px;
     cursor: pointer;
 
     &:hover {
