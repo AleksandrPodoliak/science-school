@@ -22,7 +22,7 @@
     </div>
     <img
       class="socials-img_call" 
-      src="../assets/contacts/call.svg" alt="call"
+      src="../assets/contacts/call-btn.svg" alt="call"
       @click="togglePopUp"
     >
       
