@@ -4,7 +4,7 @@
   },
   "about": {
     "title": "About us",
-    "text": "Welcome to Science School!<br><br>We are a scientific and creative center with innovative approaches to learning, the best teachers and a flexible class schedule.<br><br>Are you planning to study abroad? An individual trajectory of studying Science in English will help you prepare for exams. We will teach your child to express themselves and unlock their potential!"
+    "text": "Science School is a scientific and creative center with innovative approaches to education.<br><br>Are you planning to study abroad?<br>Science English will help you prepare for exams.<br><br>We will teach you to express yourself and unlock the potential of your child!"
   },
   "reasons": {
     "title": "Reasons to choose our school",
@@ -12,10 +12,10 @@
   },
   "learning": {
     "title": "Education",
-    "description": "For each class, an individual training program:<br> — Middle School - Grade 5 - 9;<br> — Senior school - 10th - 11th grade.<br><br>Classes are held in small groups of up to 10 people 2 times a week, 2 lessons per day lasting 45 minutes.<br><br>Lectures on mathematics, biology, chemistry, physics in English, as well as additional classes upon recruitment of a group of 8 people.<br><br>The training program was created and adapted according to the Cambridge IGSCE international curricula and model curricula of Ukraine and is also aimed at preparing for the international SAT and Cambridge exams.",
-    "list_ending_title": "Upon completion of the training, each participant will receive:",
-    "list_ending_items": ["Course completion certificate - Science school certificate - All graduates up to grade 10", "SAT General certificate - after grade 9", "Graduation certificate + SAT Subject Certificate - After grade 10"],
-    "list_events_title": "Scientific entertainment activities:<br><br> — educational and recreational trips (trips to the Ukrainian Academy of Sciences, visits to leading universities and educational institutions of the country, visits to cultural and entertainment events, organization of excursions to cultural heritage sites, etc.);<br><br> — educational and creative tourist camp."
+    "description": "Individual training program:<br> — Secondary school - 5th - 9th grade<br> — Senior school - 10th - 11th grade<br> — Classes will be 2 times a week<br><br>The training is adapted according to the Cambridge IGSCE and Ukrainian curricula and is aimed at preparing for the international SAT and Cambridge exams",
+    "list_ending_title": "Upon completion of the course, the student will receive:",
+    "list_ending_items": ["Course completion certificate - Science school certificate — all graduates up to grade 10", "SAT General certificate — after grade 9", "Graduation certificate + SAT Subject Certificate — after grade 10"],
+    "list_events_title": "Cultural space:<br>— Trips to the Ukrainian Academy of Sciences<br> — Events<br> — Excursions<br> — Educational and creative tourist camp"
   },
   "price": {
     "title": "Prices",
