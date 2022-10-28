@@ -1,5 +1,17 @@
 <template>
   <a id="anchor2"></a>
+  <div class="container container-inner">
+    <div class="freelesson">
+      <div class="title free">
+        {{ this.$t('price.free_lesson.title') }}
+      </div>
+      <customButton 
+        :text="$t('price.free_lesson.button_name')"
+        :width="mobileScreen ? '100%' : '240px'"
+        @click="togglePopUpCallback"
+      />
+    </div>
+  </div>
   <div class="price container container-inner">
     <div class="title">
       {{ this.$t('price.title') }}
@@ -16,16 +28,6 @@
           :curr="item.curr || ''"
           :button_name="item.button_name || ''"
           @open-popup="togglePopUpPrice"
-        />
-      </div>
-      <div class="title free">
-        {{ this.$t('price.free_lesson.title') }}
-      </div>
-      <div class="content-freelesson">
-        <customButton 
-          :text="$t('price.free_lesson.button_name')"
-          :width="mobileScreen ? '100%' : '240px'"
-          @click="togglePopUpCallback"
         />
       </div>
       <div class="title simple">
@@ -201,6 +203,18 @@ export default {
 
 <style lang="scss" scoped>
 
+.freelesson {
+  width: 470px;
+  margin: 0 auto;
+  background: rgba(230, 230, 254, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  border: 2px solid #00B2FF;
+  border-radius: 1rem;
+}
+
 .price {
   overflow: hidden;
   position: relative;
@@ -221,13 +235,6 @@ export default {
 .content-main {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 80px;
-}
-
-.content-freelesson {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-bottom: 80px;
 }
 
@@ -266,6 +273,10 @@ export default {
 }
 
 @media screen and (max-width: 420px) {
+
+  .freelesson {
+    width: 100%;
+  }
 
   .price {
     &__img_star {
