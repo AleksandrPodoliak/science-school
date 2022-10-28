@@ -7,7 +7,7 @@
       </div>
       <customButton 
         :text="$t('price.free_lesson.button_name')"
-        :width="mobileScreen ? '100%' : '240px'"
+        :width="mobileScreen ? '100%' : '270px'"
         @click="togglePopUpCallback"
       />
     </div>
