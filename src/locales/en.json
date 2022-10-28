@@ -62,7 +62,7 @@
       }
     ],
     "free_lesson": {
-      "title": "The trial lesson is absolutely FREE!",
+      "title": "First lesson is FREE!",
       "button_name": "Sign up"
     },
     "additional_title": "Side activities",
@@ -141,6 +141,6 @@
   },
   "popup_on_timer": {
     "title": "Hey!",
-    "descr": "At Science School, the trial lesson is FREE!<br>What are you waiting for? Hurry up and sign up!"
+    "descr": "At Science School, first lesson is FREE!<br>What are you waiting for? Hurry up and sign up!"
   }
 }
