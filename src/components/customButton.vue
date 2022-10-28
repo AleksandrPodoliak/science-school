@@ -2,6 +2,7 @@
   <button 
     class="button"
     :disabled="disabled"
+    :style="{ width: width}"
   >
     <span
       class="button__text"
@@ -12,12 +13,16 @@
 </template>
 
 <script>
+
 export default {
   name: "customButton",
   props: {
     text: String,
     disabled: {
       default: false
+    },
+    width: {
+      default: '100%'
     },
   },
 }
@@ -29,7 +34,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
   height: 48px;
   background: #00B2FF;
   border-radius: 8px;

@@ -5,7 +5,7 @@
       {{ this.$t('price.title') }}
     </div>
     <div class="content">
-      <div class="contant-main">
+      <div class="content-main">
         <priceItem
           v-for="(item, i) in cardsMainList"
           :key="i"
@@ -15,7 +15,17 @@
           :sum="item.sum || 0"
           :curr="item.curr || ''"
           :button_name="item.button_name || ''"
-          @open-popup="togglePopUp"
+          @open-popup="togglePopUpPrice"
+        />
+      </div>
+      <div class="title free">
+        {{ this.$t('price.free_lesson.title') }}
+      </div>
+      <div class="content-freelesson">
+        <customButton 
+          :text="$t('price.free_lesson.button_name')"
+          :width="mobileScreen ? '100%' : '240px'"
+          @click="togglePopUpCallback"
         />
       </div>
       <div class="title simple">
@@ -24,7 +34,7 @@
       <div class="title info">
         {{ this.$t('price.additional_info') }}
       </div>
-      <div class="contant-additional">
+      <div class="content-additional">
         <priceItem
           v-for="(item, i) in cardsAdditionalList"
           :key="i"
@@ -34,7 +44,7 @@
           :sum="item.sum || 0"
           :curr="item.curr || ''"
           :button_name="item.button_name || ''"
-          @open-popup="togglePopUp"
+          @open-popup="togglePopUpPrice"
         />
       </div>
     </div>
@@ -42,93 +52,26 @@
   </div>
 
   <popUp 
-    v-if="showPoUp"
+    v-if="showPoUpPrice"
     class="popup"
-    @close="togglePopUp"
+    @close="togglePopUpPrice"
   >
-    <div class="popup-course">
-      <div class="popup-course__name">
-        {{ currentCourseData.name }}
-      </div>
-      <div class="popup-course__price">
-        <div class="popup-course__price_period"> {{ currentCourseData.period }} </div>
-        <div class="popup-course__price_sum"> 
-          <span> {{ formatSum(currentCourseData.sum) }} </span> 
-          <span> {{ " "+currentCourseData.curr }} </span>
-        </div>
-      </div>
-    </div>
-    <div 
-      class="input input-name"
-      :class="{ invalid: v$.username.$dirty && v$.username.required.$invalid }"
-    >
-      <input
-        ref="input-name"
-        v-model="username"
-        type="text" 
-        name="name"
-        :placeholder="$t('popup.input_name.placeholder')"
-        @focus="v$.username.$reset"
-        @blur="v$.username.$touch"
-      />
-      <label for="name">{{ $t('popup.input_name.label') }}</label>
-      <div v-if="v$.username.$error"> 
-        {{ $t('popup.input_name.error') }} 
-      </div>
-    </div>
-    <div 
-      class="input input-phone"
-      :class="{ invalid: v$.phone.$dirty && v$.phone.required.$invalid || v$.phone.$dirty && v$.phone.phoneValidator.$invalid }"
-    >
-      <input 
-        v-model="phone"
-        type="number"
-        inputmode="numeric"
-        name="phone"
-        :placeholder="$t('popup.input_phone.placeholder')"
-        @focus="v$.phone.$reset"
-        @blur="v$.phone.$touch"
-      />
-      <label for="phone">{{ $t('popup.input_phone.label') }}</label>
-      <div v-if="v$.phone.$error">
-        {{ $t('popup.input_phone.error') }}
-      </div>
-    </div>
-    <div 
-      class="input input-mail"
-      :class="{ invalid: v$.mail.$dirty && v$.mail.required.$invalid || v$.mail.$dirty && v$.mail.email.$invalid }"
-    >
-      <input 
-        v-model="mail"
-        type="email"
-        name="mail"
-        :placeholder="$t('popup.input_mail.placeholder')"
-        @focus="v$.mail.$reset"
-        @blur="v$.mail.$touch"
-      />
-      <label for="mail">{{ $t('popup.input_mail.label') }}</label>
-      <div v-if="v$.mail.$error">
-        {{ $t('popup.input_mail.error')+'email@example.com' }}
-      </div>
-    </div>
-    <div 
-      class="input input-check"
-      :class="{ invalid: v$.isRulesAccept.$dirty && v$.isRulesAccept.isRulesAcceptValidator.$invalid }"
-    >
-      <input
-        v-model="isRulesAccept"
-        type="checkbox"
-        name="checkbox"
-        @focus="v$.isRulesAccept.$reset"
-        @blur="v$.isRulesAccept.$touch"
-      />
-      <label for="checkbox">{{ $t('popup.input_check.label') }}</label>
-      <span v-html="$t('popup.input_check.document')"></span>
-    </div>
-    <customButton 
-      :text="$t('popup.button_pay')"
-      :disabled="v$.$invalid || requestInProgress"
-      @click="sendForm"
+    <formPrice
+      :currentCourseData="currentCourseData"
+      @success="togglePopUpPrice(); togglePopUpSuccess();"
+      @error="togglePopUpPrice(); togglePopUpError();"
+    />
+  </popUp>
+
+  <popUp 
+    v-if="showPoUpCallback"
+    class="popup"
+    :title="$t('popup.title')"
+    @close="togglePopUpCallback"
+  >
+    <formCallback
+      @success="togglePopUpCallback(); togglePopUpSuccess();"
+      @error="togglePopUpCallback(); togglePopUpError();"
     />
   </popUp>
 
@@ -159,54 +102,32 @@
 
 import priceItem from './priceItem.vue';
 import popUp from './popUp.vue'
+import formPrice from './formPrice.vue';
+import formCallback from './formCallback.vue';
 import customButton from './customButton.vue';
-
-import { useVuelidate } from '@vuelidate/core'
-import { required, email } from '@vuelidate/validators'
-import { requester } from '../requester.js'
-
-const phoneValidator = (value) => {
-  const re = /^\d{9}$/
-  return re.test(value)
-}
-const isRulesAcceptValidator = (value) => {
-  return value
-}
 
 export default {
   name: "priceBlock",
   components: {
     priceItem,
     popUp,
+    formPrice,
+    formCallback,
     customButton, 
   },
   data() {
     return {
-      showPoUp: false,
+      showPoUpPrice: false,
+      showPoUpCallback: false,
       showPoUpSuccess: false,
       showPoUpError: false,
-      username: '',
-      phone: '',
-      mail: '',
-      isRulesAccept: false,
       currentCourseData: {},
-      requestInProgress: false,
-    }
-  },
-  validations () {
-    return {
-      username: { required, $autoDirty: true },
-      phone: { required, phoneValidator, $autoDirty: true },
-      mail: { required, email, $autoDirty: true },
-      isRulesAccept: { isRulesAcceptValidator, $autoDirty: true },
-    }
-  },
-  setup () {
-    return {
-      v$: useVuelidate()
     }
   },
   computed: {
+    mobileScreen() {
+      return window.screen.width <= 420
+    },
     cardsMainList() {
       return [
         {
@@ -257,70 +178,22 @@ export default {
     },
   },
   methods: {
-    togglePopUp(data) {
+    togglePopUpPrice(data) {
 
       if (data) {
         this.currentCourseData = data;
       } 
 
-      this.showPoUp = !this.showPoUp;
-      
-      if (!this.showPoUp) {
-        this.clearForm();
-      }
+      this.showPoUpPrice = !this.showPoUpPrice;
+    },
+    togglePopUpCallback() {
+      this.showPoUpCallback = !this.showPoUpCallback;
     },
     togglePopUpSuccess() {
       this.showPoUpSuccess = !this.showPoUpSuccess;
     },
     togglePopUpError() {
       this.showPoUpError = !this.showPoUpError;
-    },
-    clearForm() {
-      this.username = '';
-      this.phone = '';
-      this.mail = '';
-      this.isRulesAccept = false;
-      this.v$.username.$reset();
-      this.v$.phone.$reset();
-      this.v$.mail.$reset();
-      this.v$.isRulesAccept.$reset();
-      this.currentCourseData = {};
-    },
-    formatSum(sum) {
-      return new Intl.NumberFormat('ru-RU').format(sum);
-    },
-    async sendForm() {
-      this.requestInProgress = true;
-
-      const payload  = {
-        method: 'course',
-        params: {
-          username: this.username,
-          phone: '380'+this.phone,
-          mail: this.mail,
-          sum: this.currentCourseData.sum,
-          product: this.currentCourseData.name,
-          lang: this.$i18n.locale,
-        }
-      };
-      
-      try {
-        const resp = await requester(payload);
-        
-        if (resp.result) {
-          window.open(resp.result, '_blank');
-        }
-        
-        this.togglePopUp();
-        this.togglePopUpSuccess();
-      } catch (error) {
-        this.togglePopUp();
-        this.togglePopUpError();
-      }
-
-      this.clearForm();
-
-      this.requestInProgress = false;
     },
   },
 }
@@ -345,21 +218,36 @@ export default {
   z-index: 2;
 }
 
-.contant-additional {
-  display: flex;
-  justify-content: space-between;
-}
-
-.contant-main {
+.content-main {
   display: flex;
   justify-content: space-around;
   margin-bottom: 80px;
+}
+
+.content-freelesson {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.content-additional {
+  display: flex;
+  justify-content: space-between;
 }
 
 .simple {
   font-size: 1.25rem;
   color: #FFFFFF;
   margin-bottom: 16px;
+}
+
+.free {
+  text-transform: none;
+  font-size: 1.25rem;
+  color: #FFFFFF;
+  line-height: 150%;
+  margin-bottom: 40px;
 }
 
 .info {
@@ -370,64 +258,6 @@ export default {
 }
 
 .popup {
-
-  &-course {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 40px;
-
-    &__name {
-      font-family: 'Raleway-ExtraBold';
-      font-size: 1.25rem;
-      line-height: 150%;
-      text-transform: uppercase;
-      color: #00B2FF;
-      margin-bottom: 16px;
-    }
-
-    &__price {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-
-      &_period {
-        font-family: 'Raleway-Medium';
-        font-size: 0.875rem;
-        text-transform: uppercase;
-        color: #FFFFFF;
-        line-height: 120%;
-      }
-
-      &_sum {
-
-        span {
-          &:first-child {
-            font-family: 'Roboto-Bold';
-            font-size: 1.25rem;
-            color: #FFFFFF;
-          }
-
-          &:last-child {
-            font-family: 'Roboto-Regular';
-            font-size: 1.125rem;
-            color: #FFFFFF;
-          }
-        }
-      }
-    }
-  }
-  .input-name,
-  .input-child,
-  .input-phone,
-  .input-mail {
-    margin-bottom: 10px;
-  }
-  .input-check {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-  }
-
   &__success_img,
   &__error_img {
     display: block;
@@ -442,12 +272,16 @@ export default {
       display: none;
     }
   }
-  
-  .contant-additional {
+
+  .content-main {
     flex-direction: column;
   }
 
-  .contant-main {
+  .content-freelesson {
+    padding: 0 26px;
+  }
+  
+  .content-additional {
     flex-direction: column;
   }
 }

@@ -25,74 +25,60 @@
       src="../assets/contacts/call-btn.svg" alt="call"
       @click="togglePopUp"
     >
-      
+
     <popUp 
-      v-if="showPoUp"
+      v-if="showPopUpOnTimer"
+      class="popup"
+      @close="togglePopUpOnTimer"
+    >
+      <div class="popup-on-timer">
+        <div class="popup-on-timer__title">
+          <img class="popup-on-timer__title-img" src="../assets/hand.svg" alt="hand">
+          <div class="popup-on-timer__title-text"> {{ this.$t('popup_on_timer.title') }} </div>
+        </div>
+        <div 
+          class="popup-on-timer__descr"
+          v-html="$t('popup_on_timer.descr')"
+        >
+        </div>
+        <customButton 
+          :text="$t('price.free_lesson.button_name')"
+          :width="mobileScreen ? '100%' : '240px'"
+          @click="togglePopUp(); togglePopUpOnTimer();"
+        />
+      </div>
+    </popUp>
+
+    <popUp 
+      v-if="showPopUp"
       class="popup"
       :title="$t('popup.title')"
       @close="togglePopUp"
     >
-      <div 
-        class="input input-name"
-        :class="{ invalid: v$.username.$dirty && v$.username.required.$invalid }"
-      >
-        <input
-          ref="input-name"
-          v-model="username"
-          type="text" 
-          name="name"
-          :placeholder="$t('popup.input_name.placeholder')"
-          @focus="v$.username.$reset"
-          @blur="v$.username.$touch"
-        />
-        <label for="name">{{ $t('popup.input_name.label') }}</label>
-        <div v-if="v$.username.$error"> 
-          {{ $t('popup.input_name.error') }} 
-        </div>
-      </div>
-      <div 
-        class="input input-phone"
-        :class="{ invalid: v$.phone.$dirty && v$.phone.required.$invalid || v$.phone.$dirty && v$.phone.phoneValidator.$invalid }"
-      >
-        <input 
-          v-model="phone"
-          type="number"
-          inputmode="numeric"
-          name="phone"
-          :placeholder="$t('popup.input_phone.placeholder')"
-          @focus="v$.phone.$reset"
-          @blur="v$.phone.$touch"
-        />
-        <label for="phone">{{ $t('popup.input_phone.label') }}</label>
-        <div v-if="v$.phone.$error">
-          {{ $t('popup.input_phone.error') }}
-        </div>
-      </div>
-      <customButton 
-        :text="$t('popup.button')"
-        :disabled="v$.$invalid || requestInProgress"
-        @click="sendForm"
+      <formCallback
+        @success="togglePopUp(); togglePopUpSuccess();"
+        @error="togglePopUp(); togglePopUpError();"
       />
     </popUp>
 
     <popUp 
-      v-if="showPoUpSuccess"
+      v-if="showPopUpSuccess"
       class="popup"
       :title="$t('popup.title_success')"
       :button_back="false"
-      @close="showPoUpSuccess = false"
-      @click="showPoUpSuccess = false"
+      @close="showPopUpSuccess = false"
+      @click="showPopUpSuccess = false"
     >
       <img class="popup__success_img" src="../assets/contacts/contacts-success.png" alt="success">
     </popUp>
 
     <popUp 
-      v-if="showPoUpError"
+      v-if="showPopUpError"
       class="popup"
       :title="$t('popup.title_error')"
       :button_back="false"
-      @close="showPoUpError = false"
-      @click="showPoUpError = false"
+      @close="showPopUpError = false"
+      @click="showPopUpError = false"
     >
       <img class="popup__error_img" src="../assets/contacts/contacts-error.png" alt="error">
     </popUp>
@@ -102,87 +88,46 @@
 <script>
 
 import popUp from './popUp.vue'
+import formCallback from './formCallback.vue';
 import customButton from './customButton.vue';
-
-import { useVuelidate } from '@vuelidate/core'
-import { required } from '@vuelidate/validators'
-import { requester } from '../requester.js'
-
-const phoneValidator = (value) => {
-  const re = /^\d{9}$/
-  return re.test(value)
-}
 
 export default {
   name: "contactsFixed",
-  components: { 
+  components: {
     popUp,
-    customButton, 
-  },
-  setup () {
-    return {
-      v$: useVuelidate()
-    }
+    formCallback,
+    customButton,
   },
   data() {
     return {
-      showPoUp: false,
-      showPoUpSuccess: false,
-      showPoUpError: false,
-      username: '',
-      phone: '',
-      requestInProgress: false,
+      showPopUp: false,
+      showPopUpOnTimer: false,
+      showPopUpSuccess: false,
+      showPopUpError: false,
     }
   },
-  validations () {
-    return {
-      username: { required, $autoDirty: true },
-      phone: { required, phoneValidator, $autoDirty: true }
-    }
+  mounted() {
+    setTimeout(() => {
+      this.togglePopUpOnTimer();
+    }, 15000);
+  },
+  computed: {
+    mobileScreen() {
+      return window.screen.width <= 420
+    },
   },
   methods: {
     togglePopUp() {
-      this.showPoUp = !this.showPoUp;
-      
-      if (!this.showPoUp) {
-        this.clearForm();
-      }
+      this.showPopUp = !this.showPopUp;
+    },
+    togglePopUpOnTimer() {
+      this.showPopUpOnTimer = !this.showPopUpOnTimer;
     },
     togglePopUpSuccess() {
-      this.showPoUpSuccess = !this.showPoUpSuccess;
+      this.showPopUpSuccess = !this.showPopUpSuccess;
     },
     togglePopUpError() {
-      this.showPoUpError = !this.showPoUpError;
-    },
-    clearForm() {
-      this.username = '';
-      this.phone = '';
-      this.v$.username.$reset();
-      this.v$.phone.$reset();
-    },
-    async sendForm() {
-      this.requestInProgress = true;
-
-      const payload  = {
-        method: 'callback',
-        params: {
-          username: this.username,
-          phone: '380'+this.phone,
-        }
-      };
-      
-      try {
-        await requester(payload);
-        this.togglePopUp();
-        this.togglePopUpSuccess();
-      } catch (error) {
-        this.togglePopUp();
-        this.togglePopUpError();
-      }
-
-      this.clearForm();
-
-      this.requestInProgress = false;
+      this.showPopUpError = !this.showPopUpError;
     },
   },
 }
@@ -227,14 +172,36 @@ export default {
   }
 }
 
-.popup {
-  .input-name {
-    margin-bottom: 10px;
-  }
-  .input-phone {
-    margin-bottom: 20px;
+.popup-on-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__title {
+    display: flex;
+    margin-bottom: 3.75rem;
+
+    &-text {
+      margin-left: 1.25rem;
+      font-family: "Raleway-Bold";
+      font-size: 2rem;
+      color: #00B2FF;
+      letter-spacing: 0.05rem;
+      line-height: 150%;
+    }
   }
 
+  &__descr {
+    text-align: center;
+    line-height: 200%;
+    font-family: 'Raleway-Medium';
+    font-size: 0.875rem;
+    color: #fff;
+    margin-bottom: 3.75rem;
+  }
+}
+
+.popup {
   &__success_img,
   &__error_img {
     display: block;
